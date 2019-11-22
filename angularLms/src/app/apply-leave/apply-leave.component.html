@@ -1,0 +1,34 @@
+
+  <table id="applyleavetable" mat-table [dataSource]="ele_data" class="mat-elevation-z8 mattable">
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container> 
+    <ng-container matColumnDef="typeOfLeave">
+      <th mat-header-cell *matHeaderCellDef> Type Of Leave </th>
+      <td mat-cell *matCellDef="let element"> 
+      <select (change)="leaveChange($event,element)" class="input">
+        <option></option>
+        <option>Casual</option>
+        <option>Work From Home</option>
+        <option>Others</option>
+      </select>  
+      
+      </td>
+    </ng-container> 
+    <ng-container matColumnDef="reason">
+      <th mat-header-cell *matHeaderCellDef>Reason</th>
+      <td mat-cell *matCellDef="let element"><input class="input" type="input" width="100%" (change)="inputChange($event,element)"> </td>
+    </ng-container> 
+    <ng-container matColumnDef="del">
+      <th mat-header-cell *matHeaderCellDef> Delete</th>
+      <td mat-cell *matCellDef="let element"><i class="fa fa-trash" aria-hidden="true" (click)="deleteRow(element)"></i></td>
+    </ng-container> 
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <div class="leavebutton" >
+  <button mat-button id="leaveapply" class="button apply" (click)="ApplyLeave()">Apply</button>
+  <button mat-button class="button cancel" (click)="CancelLeave()">Cancel</button>
+ </div>
+  

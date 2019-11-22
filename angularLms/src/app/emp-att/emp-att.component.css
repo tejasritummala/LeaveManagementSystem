@@ -1,0 +1,40 @@
+.empAtt{
+    border:2%;
+}
+.styled-select {
+    border-radius: 0.3rem 0.3rem;
+    margin-top: 4px;
+    height: 2.4rem;
+    overflow: hidden;
+    text-align: center;
+    width: 12rem;
+  }
+  
+  
+  
+  .styled-btn {
+    border-radius: 0.3rem 0.3rem;
+    margin-top: 4px;
+    height: 2.4rem;
+    overflow: hidden;
+    text-align: center;
+    width: 10rem;
+  }
+  .blue {
+  
+    background-color: #4e73df;
+    color: white;
+  
+  }
+  
+  .atndiv {
+    display: block;
+    text-align: center;
+  }
+  button:not(.timepicker-dial__item) {
+    color: yellow !important;
+  }
+  .nice-event{
+    background-color: yellow !important;
+    width:20px;
+  }

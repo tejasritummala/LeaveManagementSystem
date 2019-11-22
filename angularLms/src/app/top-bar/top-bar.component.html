@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+<img class="logo" src="http://fulcrum-gt.com/wp-content/uploads/2018/10/Fulcrum-GT-logo-FINAL-vector-1.png" />
+<ul class="navbar-nav ml-auto">
+    <div class="topbar-divider d-none d-sm-block"></div>
+    <li class="nav-item dropdown no-arrow">
+      <div class="demo" *ngIf="retrieved">
+        <div>
+          <ul>
+            <li><span class="mr-2 d-none d-lg-inline text-gray-600 small"><b>FGT ID:{{emp.fgtid}}</b></span>
+            </li>
+            <li><span class="mr-2 d-none d-lg-inline text-gray-600 small"><b>Name:{{emp.name}}</b></span>
+            </li>
+            <li><span class="m r-2 d-none d-lg-inline text-gray-600 small"><b>Designation:{{emp.role}}</b></span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <a class="nav-link dropdown-toggle"  id="userDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" (click)="openDialog()">
+            <img class="img-profile rounded-circle" src={{emp.avatar}} />
+            <!-- <button classs="profile" (click)="openDialog()">Profile</button> -->
+          </a>                
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>

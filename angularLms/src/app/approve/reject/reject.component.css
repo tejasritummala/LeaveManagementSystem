@@ -1,0 +1,46 @@
+.mattable{
+    width:100%;
+   
+}
+.apply {
+    background-color: #4CAF50;
+    /* Green */
+  }
+  .cancel{
+    background-color: rgb(192, 46, 1) 
+  }
+  .button {
+    border-radius: 5px 5px;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 10px 10px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+  }
+  .leavebutton{
+    display: -webkit-box;
+     padding: 0px 40%;
+     /* background-color: #fff; */
+  }
+  .input{
+      width:90%;      
+  }
+ 
+  .mat-cell{
+    font-size:16px;
+    text-align: center;
+    border:2px solid #d7dbe0;  
+  }
+ .mat-header-cell{
+      font-weight:bold;
+      font-size:16px;
+      text-align: center;
+      border:2px solid #d7dbe0;
+  }

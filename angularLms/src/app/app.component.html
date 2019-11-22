@@ -1,0 +1,216 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+  <!-- Sidebar -->
+  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <div class="sidebar-brand-icon rotate-n-15">
+        <i class="fas fa-laugh-wink"></i>
+      </div>
+      <div class="sidebar-brand-text mx-3">LMS</div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="/">
+        <i class="fa fa-home" style="font-size: large;"></i>
+        <span>Home</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/applyLeave">
+        <i class="fa fa-table" ></i>
+        <span>Apply Leave</span></a>
+    </li>
+
+
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/approveReject">
+        <i class="fa fa-table"></i>
+        <span>Approve/Reject</span></a>
+    </li>
+
+    <hr class="sidebar-divider">
+
+    <li class="nav-item">
+        <a class="nav-link"  data-toggle="collapse" data-target="#collapseLeave" aria-expanded="true"
+          aria-controls="collapseLeave">
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Leave Summary</span>
+        </a>
+        <div id="collapseLeave" class="collapse show" aria-labelledby="headingLeave" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <span class="leavesmrytext"><b>Leave Summary</b></span>
+
+           <table class="collapse-header">
+              <tbody>
+                <tr>
+                  <td>
+                    <p class="leaveSummary">Total Leaves</p>
+                  </td>
+                  <td>
+                    <p class="leaveSummary ">:</p>
+                  </td>
+                  <td>
+                    <p class="leaveSummary"></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p class="leaveSummary ">Approved</p>
+                  </td>
+                  <td>
+                    <p class="leaveSummary ">:</p>
+                  </td>
+
+                  <td>
+                    <p class="leaveSummary"></p>
+                  </td>
+
+                </tr>
+                <tr>
+                  <td>
+                    <p class="leaveSummary">Applied</p>
+                  </td>
+                  <td>
+                    <p class="leaveSummary">:</p>
+                  </td>
+                  <td>
+                    <p class="leaveSummary"></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p class="leaveSummary">Balance</p>
+                  </td>
+
+                  <td>
+                    <p class="leaveSummary">: </p>
+                  </td>
+
+                  <td>
+                    <p class="leaveSummary"></p>
+                  </td>
+
+                </tr></tbody>
+            </table> 
+          </div>
+        </div>
+      </li>
+
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" data-target="#collapseManagerLeave" aria-expanded="true" aria-controls="collapseLeave">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Approve/Reject Summary</span></a>
+        <div id="collapseManagerLeave" class="collapse show" aria-labelledby="headingLeave" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <span class="leavesmrytext"><b>Approve/Reject Summary</b></span>
+
+               <table class="collapse-header">
+                <tbody>
+                  <tr>
+                    <td>
+                      <p class="leaveSummary ">Approved</p>
+                    </td>
+                    <td>
+                      <p class="leaveSummary ">: </p>
+                    </td>
+
+                    <td>
+                      <p class="leaveSummary"></p>
+                    </td>
+
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="leaveSummary">Denied</p>
+                    </td>
+                    <td>
+                      <p class="leaveSummary">:</p>
+                    </td>
+                    <td>
+                      <p class="leaveSummary"></p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p class="leaveSummary">Pending</p>
+                    </td>
+
+                    <td>
+                      <p class="leaveSummary">: </p>
+                    </td>
+
+                    <td>
+                      <p class="leaveSummary"></p>
+                    </td>
+
+                  </tr>
+                </tbody>
+              </table> 
+            </div>
+          </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/empAtt">
+        <i class="fa fa-calendar"></i>
+        <span>Employee Attendance</span></a>
+    </li>
+   
+    <hr class="sidebar-divider d-none d-md-block" />
+    <div class="text-center d-none d-md-inline">
+      <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+  </ul>
+  <!-- End of Sidebar -->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+      <!-- Topbar -->
+   
+
+    <app-top-bar></app-top-bar>
+
+     
+      <!-- End of Topbar -->
+
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+
+
+        <router-outlet (activate)="onActivate($event)"></router-outlet>
+
+      </div>
+
+
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span>Copyright &copy; Your Website 2019</span>
+        </div>
+      </div>
+    </footer>
+    <!-- End of Footer -->
+
+  </div>
+  <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->

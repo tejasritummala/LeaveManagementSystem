@@ -1,0 +1,110 @@
+<!-- <mat-toolbar > -->
+    <h1 mat-dialog-title>Profile Details</h1>
+<!-- </mat-toolbar> -->
+<hr>
+<div mat-dialog-content width="100%">
+    <div>
+        <table id="profiletable" width='600px' cellPadding='3px' cellSpacing='0'>
+            <tbody>
+                <tr>
+                    <td style="textAlign: left"><b>FGT ID</b></td>
+                    <td style="textAlign: center">:</td>
+                    <td><input type="text"  [defaultValue]="empData[0].fgtid" width="30%"
+                            disabled /></td>
+
+                </tr>
+
+                <tr>
+                    <td style="textAlign: left"><b> Name </b></td>
+                    <td style="textAlign: center">:</td>
+                    <td><input type="text" [defaultValue]="empData[0].name" width="30%" /></td>
+                </tr>
+
+                <tr>
+                    <td style="textAlign: left"><b>Date_Of_Birth </b></td>
+                    <td style="textAlign: center">:</td>
+                    <td><input type="date" [defaultValue]="empData[0].dob" width="30%" /></td>
+                </tr>
+
+                <tr>
+                    <td style="textAlign: left"><b>Gender</b></td>
+                    <td style="textAlign: center">:</td>
+                    <td><input type="radio" name="gender" value="male" defaultChecked /> Male <br />
+                        <input type="radio" name="gender" value="female" /> Female <br />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="textAlign: left"><b>Phone</b></td>
+                    <td style="textAlign: center">:</td>
+                    <td><input type="number" id="phoneNo" [defaultValue]="empData[0].phone[0].number" width="30%" />
+                    </td>
+                    <td style="textAlign: center">Private</td>
+                    <td><input type="checkbox" id="phnchk" /></td>
+                </tr>
+                <tr>
+                    <td style="textAlign: left"><b>Email</b></td>
+                    <td style="textAlign: center">:</td>
+                    <td><input type="email" [defaultValue]="empData[0].email[0].id" id="emailId" width="30%" /></td>
+                    <td style="textAlign: center">Private</td>
+                    <td><input type="checkbox" id="emlchk" defaultChecked /></td>
+                </tr>
+
+                <tr>
+                    <td style="textAlign: left"><b>CPR</b></td>
+                    <td style="textAlign: center">:</td>
+                    <td><input type="text" [defaultValue]="empData[0].cpr" id="cprId" width="30%" /></td>
+                </tr>
+                <tr>
+                    <td style="textAlign: left"><b>Date_of_joining</b></td>
+                    <td style="textAlign: center">:</td>
+                    <td><input type="date" [defaultValue]="empData[0].dateOfjoining" width="30%" id="dateJn" /></td>
+                </tr>
+                <tr>
+                    <td style="textAlign: left"><b>Employee_Status</b></td>
+                    <td style="textAlign: center">:</td>
+                    <td><input type="text" [defaultValue]="empData[0].employeestatus" width="30%" id="empStatus" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="textAlign: left"><b>Location</b></td>
+                    <td style="textAlign: center">:</td>
+                    <td><input type="text" [defaultValue]="empData[0].location" width="30%" id="LocationId" /></td>
+                </tr>
+                <tr>
+                    <td style="textAlign: left"><b>Reporting_To</b></td>
+                    <td style="textAlign: center">:</td>
+                    <td><input type="Text" [defaultValue]="empData[0].reportingto[0].id" width="30%" id="reportingId" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="textAlign: left"><b>Releaving_Date</b></td>
+                    <td style="textAlign: center">:</td>
+                    <td><input type="date" [defaultValue]="empData[0].releavingdate" width="30%" id="revlDate" /></td>
+                </tr>
+
+                <tr>
+                    <td style="textAlign: left"><b>Role</b></td>
+                    <td style="textAlign: center">:</td>
+                    <td><input type="text" [defaultValue]="empData[0].role" width="30%" id="roleId" /></td>
+                </tr>
+                <tr>
+                    <td style="textAlign: left"><b>Company_Email_Id</b></td>
+                    <td style="textAlign: center">:</td>
+                    <td><input type="email" [defaultValue]="empData[0].companyemailid" width="30%" id="cmpyMailId" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="textAlign: left"><b>Avatar</b></td>
+                    <td style="textAlign: center">:</td>
+                    <td><input type="text" [defaultValue]="empData[0].avatar" width="30%" id="avatarId" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<hr>
+<div mat-dialog-actions align="end">
+    <button mat-button (click)="onSave()">Save</button>
+    <button mat-button (click)="onClose()">Close</button>
+</div>

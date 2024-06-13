@@ -2,17 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { NewServService } from '../new-serv.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {ProfileComponent} from '../profile/profile.component';
+import { Employee } from '../models';
 @Component({
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent implements OnInit {
-  empData;
-  emp={};
+  empData: Employee[];
+  emp: Employee;
   retrieved;
   constructor(private newServService: NewServService,private dialog: MatDialog,) { 
-    this.newServService.GetEmp().subscribe(data => {
+    this.newServService.getEmp().subscribe(data => {
       this.empData = data;
       console.log(this.empData);
     //  this.ngOnInIt();

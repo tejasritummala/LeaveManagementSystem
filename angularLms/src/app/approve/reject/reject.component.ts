@@ -21,7 +21,7 @@ export class RejectComponent implements OnInit {
     var month = new Date().getMonth() + 1;
     var availLeavesBasedOnMonth = month * 1.25;
     this.newServService.selectedDates([]);
-    this.newServService.GetEmp().subscribe(data => {
+    this.newServService.getEmp().subscribe(data => {
       debugger;
       this.empList = data.filter(function (object) {
         return object.reportingto[0].id === "FGT1001"
@@ -30,7 +30,7 @@ export class RejectComponent implements OnInit {
         this.empArr.push(this.empList[i].fgtid);
       }
     })
-    this.newServService.GetUser().subscribe(data => {
+    this.newServService.getUser().subscribe(data => {
       debugger;
       this.totalLeaves = data;
       this.leavesData = data.filter(function (object) {
@@ -48,7 +48,7 @@ export class RejectComponent implements OnInit {
       console.log(this.filterLeavesData);
       console.log(this.leavesData);
     });
-    this.newServService.GetConfig().subscribe(data => {
+    this.newServService.getConfig().subscribe(data => {
       this.configData = data;
       var FestiveArr =  this.configData[0].festiveHoliday;
      

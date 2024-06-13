@@ -1,6 +1,21 @@
-<full-calendar  #fullcalendar (dayRender)="dayRender($event)" [header]="options.header" 
-[selectable]="options.selectable" (dateClick)="dateClick($event)" (eventClick)="eventClick($event)" [eventSources]="options.eventSources" 
-(select)="select($event)" defaultView="dayGridMonth"  [plugins]="options.plugins" [googleCalendarApiKey]="options.googleCalendarApiKey" [events]="options.events"></full-calendar>
+<!-- <full-calendar  #fullcalendar 
+  (dayRender)="dayRender($event)" 
+  [header]="options.header" 
+[selectable]="options.selectable" 
+(dateClick)="dateClick($event)" 
+(eventClick)="eventClick($event)" 
+[eventSources]="options.eventSources" 
+(select)="select($event)"
+ defaultView="dayGridMonth"  
+ [plugins]="options.plugins" 
+ [googleCalendarApiKey]="options.googleCalendarApiKey" 
+ [events]="options.events">
+</full-calendar> -->
+
+<full-calendar  [options]='options'>
+</full-calendar>
+
+
 <button (click)="calldayRender()">click</button>
 <h1>FULL CALENDAR</h1>
 <!-- <div id="homeCalendar"></div> -->

@@ -1,10 +1,9 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
 import { FullCalendarComponent } from '@fullcalendar/angular';
-import { OptionsInput,Calendar } from '@fullcalendar/core';
+import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import { NewServService } from '../new-serv.service';
-import {employee} from '../models';
 import DataSource from 'devextreme/data/data_source';
 import CustomStore from 'devextreme/data/custom_store';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -53,7 +52,7 @@ export class CalendarComponent implements OnInit {
   cal;
   dates = [];
   arr=[];
-  options: OptionsInput;
+  options: CalendarOptions;
   viewDate: Date = new Date();
   
   events = [  {
@@ -209,22 +208,23 @@ ngOnInit() {
     debugger;   
     this.dates = [];
     this.newServService.selectedDates([]);
-    this.ld = this.newServService.GetUser();
-    this.newServService.GetConfig().subscribe(data => {
+    this.ld = this.newServService.getUser();
+    this.newServService.getConfig().subscribe(data => {
       this.configData = data;
       console.log(this.configData);
     });
-    this.newServService.GetUser().subscribe(data => {
+    this.newServService.getUser().subscribe(data => {
       this.leavesData = data;
     });
-    this.newServService.GetEmp().subscribe(data => {
+    this.newServService.getEmp().subscribe(data => {
       this.empData = data;
     });
-    this.newServService.GetAtt().subscribe(data => {
+    this.newServService.getAtt().subscribe(data => {
       this.attendanceData = data;
       console.log(data);
     });
     this.options = {
+      initialView: 'dayGridMonth',
       googleCalendarApiKey: 'AIzaSyDpySfy1n16129SFOBRDA-Nt_t6JX6EHnU',
       editable: true,
       events: 'en.indian#holiday@group.v.calendar.google.com',
@@ -246,7 +246,7 @@ ngOnInit() {
           }
         }
       },
-      header: {
+      headerToolbar: {
         right: 'today prev,next  myCustomButton',
         center: 'title',
         left: 'prevYear,nextYear'

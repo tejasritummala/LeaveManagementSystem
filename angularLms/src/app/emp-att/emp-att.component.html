@@ -8,12 +8,34 @@
       </select>     
     </label> 
   </div>
-<full-calendar  id="fullcalendar" #fullcalendar (dayRender)="dayRender($event)" [googleCalendarApiKey]="options.googleCalendarApiKey" [events]="options.events" [header]="options.header" (dateClick)="dateClick($event)" (eventClick)="eventClick($event)" defaultView="dayGridMonth"  [plugins]="options.plugins">
-</full-calendar>
+
+  <full-calendar  [options]='options'>
+    <ng-template #eventContent let-arg>
+      <b>{{ arg.timeText }}</b>
+      <i>{{ arg.event.title }}</i>
+    </ng-template>
+  </full-calendar>
+
+<!-- <full-calendar  id="fullcalendar" 
+  #fullcalendar 
+  (dayRender)="dayRender($event)" 
+  [googleCalendarApiKey]="options.googleCalendarApiKey" 
+  [events]="options.events" 
+  [header]="options.headerToolbar" 
+  (dateClick)="dateClick($event)" 
+  (eventClick)="eventClick($event)" 
+  defaultView="dayGridMonth"  
+  [plugins]="options.plugins">
+</full-calendar> -->
+
+
 <!-- <div id="calendar"></div> -->
 <!-- <input [ngxTimepicker]="picker">
     <ngx-material-timepicker #picker></ngx-material-timepicker> -->
-    <div class="toggle-custom-icon-example">
+
+<!-- ------------------------------commented to fix issues-------------------------------- -->
+
+    <!-- <div class="toggle-custom-icon-example">
         <input [ngxTimepicker]="toggleIcon" [disableClick]="true" readonly>
         <ngx-material-timepicker-toggle [for]="toggleIcon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" style="color:warn;" class="nice-event" width="5px" height="30px" ngxMaterialTimepickerToggleIcon>
@@ -24,7 +46,9 @@
     </div>
     <div class="ngx-timepicker-field-example nice-event">
             <ngx-timepicker-field [buttonAlign]="'left'" ></ngx-timepicker-field>
-        </div>
+        </div> -->
+
+
     <!-- <ngx-material-timepicker-toggle matSuffix [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
                                             <ngx-material-timepicker matSuffix #toggleTimepicker></ngx-material-timepicker> -->
 </div>

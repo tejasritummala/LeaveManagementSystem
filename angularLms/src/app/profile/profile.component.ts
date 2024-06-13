@@ -1,5 +1,5 @@
 import { Component, OnInit,Inject } from '@angular/core';
-import { VERSION, MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NewServService } from '../new-serv.service';
 @Component({
   selector: 'app-profile',
@@ -12,7 +12,7 @@ export class ProfileComponent implements OnInit {
   private dialogRef: MatDialogRef<ProfileComponent>,private dialog: MatDialog,private newServService: NewServService) { }
 
   ngOnInit() {
-    this.newServService.GetEmp().subscribe(data => {
+    this.newServService.getEmp().subscribe(data => {
       this.empData = data;
       console.log( this.empData[0]);
     });

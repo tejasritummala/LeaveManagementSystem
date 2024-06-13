@@ -1,6 +1,6 @@
 import { Component, OnInit,Output, EventEmitter ,ViewChild } from '@angular/core';
 import { FullCalendarComponent } from '@fullcalendar/angular';
-import { OptionsInput, Calendar, createElement } from '@fullcalendar/core';
+import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
@@ -21,7 +21,7 @@ export class EmpAttComponent implements OnInit {
   configData;
   attendanceData;
   arr = ["2019-10-23", "2019-10-24", "2019-10-19", "2019-10-20"];
-  options: OptionsInput;
+  options: CalendarOptions;
   @ViewChild('fullcalendar',{static:true}) calendarComponent: FullCalendarComponent;
   title = 'my-first-projec0409';
   calendarPlugins = [dayGridPlugin]; // important!
@@ -37,26 +37,27 @@ export class EmpAttComponent implements OnInit {
   }
   ngOnInit() {
     this.newServService.selectedDates([]);
-    this.newServService.GetConfig().subscribe(data => {
+    this.newServService.getConfig().subscribe(data => {
       this.configData = data;
       console.log(this.configData);
     });
-    this.newServService.GetEmp().subscribe(data => {
+    this.newServService.getEmp().subscribe(data => {
       this.empList = data.filter(function (object) {
         return object.reportingto[0].id === "FGT1001"
       });
       this.empList.unshift("");
       console.log(this.empList);
     })
-    this.newServService.GetUser().subscribe(data => {  // this is triggered only once, why ?
+    this.newServService.getUser().subscribe(data => {  // this is triggered only once, why ?
       this.leavesData = data;
       console.log(data);
     });
-    this.newServService.GetAtt().subscribe(data => {
+    this.newServService.getAtt().subscribe(data => {
       this.attendanceData = data;
       console.log(data);
     });
     this.options = {
+      initialView: 'dayGridMonth',
       googleCalendarApiKey: 'AIzaSyDpySfy1n16129SFOBRDA-Nt_t6JX6EHnU',
       editable: true,
       events: 'en.indian#holiday@group.v.calendar.google.com',
@@ -69,12 +70,12 @@ export class EmpAttComponent implements OnInit {
           }
         }
       },
-      header: {
+      headerToolbar: {
         right: 'today prev,next  myCustomButton',
         center: 'title',
         left: 'prevYear,nextYear'
       },
-      plugins: [dayGridPlugin, interactionPlugin,googleCalendarPlugin]
+      plugins: [dayGridPlugin, interactionPlugin,googleCalendarPlugin],
     };
   }
   ngAfterViewInit(){

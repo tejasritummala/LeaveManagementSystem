@@ -12,7 +12,7 @@ export interface  Leaves {
     approvedby:String;
     isworkfromhome:Boolean ; 
   }
-  export interface employee {
+  export interface Employee {
     fgtid: String,
     name: String,
     dob: String,
@@ -30,7 +30,7 @@ export interface  Leaves {
     companyemailid: String,
     avatar: String
   }
-  export interface attendance {
+  export interface Attendance {
     fgtid: String,
     attendence: []
   }

@@ -3,14 +3,17 @@ var path = require("path");
 var bodyParser = require('body-parser');
 var mongo = require("mongoose");
 
-var db = mongo.connect("mongodb://localhost:27017/lmsdev", function (err, response) {
-  if (err) { console.log(err); }
-  else { console.log('Connected to ' + db, ' + '); }
+// Connect to MongoDB
+mongo.connect('mongodb://localhost:27017/lmsdev', {})
+.then(() => {
+  console.log('Connected to MongoDB');
+})
+.catch((error) => {
+  console.error('Error connecting to MongoDB:', error);
 });
 
 
 var app = express()
-app.use(bodyParser());
 app.use(bodyParser.json({ limit: '100mb' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
